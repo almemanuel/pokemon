@@ -1,0 +1,71 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+img {
+    border: none;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+button {
+    border-radius: .25rem;
+    border-style: none;
+}
+
+.Poison {
+    background-color: #399394;
+}
+
+.Fire, .Dragon {
+    background-color: #ff9441;
+}
+
+.Flying {
+    background-color: #e6b462;
+}
+
+.Water {
+    background-color: #5a9ca4;
+}
+
+.Bug {
+    background-color: #eeeeff;
+}
+
+.Normal {
+    background-color: #ffe683;
+}
+
+.Electric {
+    background-color: #f6e652;
+}
+
+.Ground {
+    background-color: #ded5e6;
+}
+
+.Grass {
+    background-color: #837b9c;
+}
+
+.Fighting {
+    background-color: #debd39;
+}
+
+.Psych {
+    background-color: #ffd54a;
+}
+
+.Rock {
+    background-color: #a45a5a;
+}
+
+.Ice, .Ghost {
+    background-color: #8bc5cd;
+}

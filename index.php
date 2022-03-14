@@ -8,6 +8,11 @@
 
     <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/1169/premium/1169608.png?token=exp=1646680846~hmac=85f7e84b6b9e2398cbfe9ee5cf3179c9" type="image/x-icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <?php
@@ -26,44 +31,23 @@
             } return ["pokemon" => []];
         }
 
+        function showPokemons($pokemons){
+            foreach($pokemons as $pokemon){ ?>
+                <div>
+                    <img src="<?= $pokemon->img ?>" alt="<?= $pokemon->name ?>" >
+                    <h1><?= $pokemon->name ?></h1>
+                    <?php foreach($pokemon->type as $type) { ?>
+                        <button class="<?= $type ?>"><?= $type ?></button>
+                    <?php } ?>
+                </div>
+            <?php }
+        }
+
         $url = 'https://www.canalti.com.br/api/pokemons.json';
         $pokemons = getPokemon($url);
+        showPokemons($pokemons);
 
     ?>
-
-    <pre>
-        <?php print_r($pokemons); ?>
-    </pre>
-<!-- 
-    foreach($pokemons as $pokemon){
-        echo $pokemon->id;
-        echo $pokemon->num;
-        echo $pokemon->name;
-        echo $pokemon->img;
-        foreach($pokemon->type as $type){
-            echo $type;
-        }
-        echo $pokemon->height;
-        echo $pokemon->weight;
-        echo $pokemon->candy;
-        echo $pokemon->candy_count;
-        echo $pokemon->egg;
-        echo $pokemon->spawn_chance;
-        echo $pokemon->abg_spawns;
-        echo $pokemon->spawn_time;
-        foreach($pokemon->multipliers as $multipliers) {
-            echo $multipliers;
-        }
-        foreach($pokemon->weaknesses as $weakness) {
-            echo $weakness;
-        }
-        foreach($pokemon->next_evolution as $next_evolution) {
-            foreach($next_evolution as $next_evolution) {
-                echo $next_evolution->num;
-                echo $next_evolution->name;
-            }
-        }
-    } -->
 
 </body>
 </html>
